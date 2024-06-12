@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     contactButton.addEventListener('click', function(event) {
         // You can set subject and body dynamically if needed
         const subject = encodeURIComponent("Exciting Opportunity! We'd like to offer you the position of ...");
-        const body = encodeURIComponent("Dear Kabir,\n\nWe are pleased to extend the following offer to you...");
-        this.href = `mailto:kabirschaturvedi@gmail.com?subject=${subject}&body=${body}`;
+        const body = encodeURIComponent("Dear Harshit,\n\nWe are pleased to extend the following offer to you...");
+        this.href = `mailto:harshit101998@gmail.com?subject=${subject}&body=${body}`;
         
         // Log or handle the click event as needed
         console.log("Contact Me button was clicked.");
