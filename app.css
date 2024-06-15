@@ -1024,3 +1024,97 @@ span {
         justify-content: center;  /* Centers the buttons and icons horizontally */
     }
 }
+
+.portfolio-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides {
+    display: flex;
+    gap: 20px; /* Space between portfolio items */
+}
+
+.portfolio-box {
+    min-width: calc(100% - 20px); /* Adjust width to account for the gap */
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-box:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-box img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.portfolio-layer {
+    padding: 15px;
+}
+
+.portfolio-layer h4 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.portfolio-layer p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.project-links {
+    margin-top: 10px;
+}
+
+.project-links a {
+    color: #333;
+    font-size: 1.2em;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #007bff;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+

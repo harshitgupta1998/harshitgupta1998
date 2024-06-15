@@ -61,3 +61,20 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 })
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.portfolio-box').length;
+    currentSlide += direction;
+    
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    const offset = -currentSlide * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+}
