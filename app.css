@@ -1054,17 +1054,20 @@ span {
     transition: transform 0.3s ease-in-out;
 }
 
-.portfolio-box:hover {
-    transform: scale(1.05);
-}
-
-.portfolio-box img {
-    width: 100%;
-    border-bottom: 1px solid #ddd;
+.portfolio-box:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
 }
 
 .portfolio-layer {
-    padding: 15px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio-layer h4 {
@@ -1118,3 +1121,133 @@ span {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+h1, h2 {
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: var(--bg-color); /* Becomes solid on scroll */
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid var(--main-color);
+}
+
+/* Tech Stack Section */
+/* Tech Stack Section */
+.tech-stack {
+    padding: 6rem 9%;
+    background: linear-gradient(135deg, #00abf0, #1a73e8); /* Smooth gradient background */
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 20px;
+}
+
+.tech-stack .heading {
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+    color: #fff; /* White text for better contrast against the background */
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.tech-stack .heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.tech-stack .sub-heading {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    color: rgba(255, 255, 255, 0.8); /* Subtle white text */
+}
+
+.tech-categories {
+    display: flex;  /* Flexbox layout */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between;
+    align-items: stretch; /* Ensures equal height */
+    gap: 2rem;
+}
+
+.tech-category {
+    background: #fff; /* White background for cards */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+    flex: 1; /* Each category takes equal width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tech-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #00abf0; /* Border changes to theme color on hover */
+}
+
+.tech-category h3 {
+    font-size: 2.4rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+    color: #666; /* Soft grey for list items */
+    margin-bottom: 2rem;
+}
+
+.tech-category ul li i {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.tech-category ul li:hover i {
+    color: var(--second-bg-color);
+    transition: color 0.3s ease;
+}
+
+.icon-container {
+    font-size: 3.5rem;
+    color: #00abf0; /* Primary color for icons */
+    margin-bottom: 1rem;
+    transition: transform 0.6s ease-in-out, color 0.3s ease;
+}
+
+.tech-category:hover .icon-container {
+    transform: rotate(360deg);
+    color: #1a73e8; /* Changes to a complementary color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tech-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-category {
+        margin-bottom: 2rem;
+    }
+}
