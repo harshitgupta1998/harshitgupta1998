@@ -13,7 +13,7 @@
 
 :root {
     --bg-color: #ffffff;
-    --second-bg-color: #00abf0;
+    --second-bg-color: #52b1d8;
     --text-color: #3b3b3b;
     --main-color: #0b222b;
 }
@@ -250,49 +250,134 @@ section {
 span {
     color: var(--main-color);
 }
+/* About Section Styling */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 9%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient background */
+    color: var(--text-color);
+    gap: 3rem;
+    border-radius: 1rem; /* Rounded corners for the entire section */
+}
 
+/* About Image Wrapper */
 .about-img {
     position: relative;
     width: 30rem;
-    height: 30rem;
-    border-radius: 50;
+    height: 30rem; /* Makes the image square */
+    border-radius: 10px; /* Optional: Slightly rounded corners */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Ensures no overflow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow to the image */
+    background: white; /* Optional: White background behind image */
 }
 
+/* Image Styling */
 .about-img img {
-    width: 90%;
-    border-radius: 50%;
-    border: .2rem solid var(--main-color);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the square shape */
+    border-radius: 10px; /* Matches the container’s border radius */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+/* Hover Effect on Image */
+.about-img:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adds a soft shadow on hover */
+}
+
+/* Border Animation - Spinning */
 .about-img .circle-spin {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    border-top: .2rem solid var(--second-bg-color);
-    border-bottom: .2rem solid var(--second-bg-color);
-    border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color);
-    animation: aboutSpinner 8s linear infinite;
+    border-radius: 10px; /* Matches the square shape */
+    border-top: 0.2rem solid transparent;
+    border-left: 0.2rem solid var(--main-color);
+    border-right: 0.2rem solid var(--main-color);
+    animation: rotate 8s linear infinite;
 }
 
-.about-content {
-    text-align: center;
+/* Rotate Animation */
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
-.about-content h3 {
-    font-size: 2.6rem;
+/* About Content Styling */
+.about-details {
+    flex-basis: 60%;
+    text-align: left;
 }
 
+.about-details .heading {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Heading Underline Animation */
+.about-details .heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.about-details .heading:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* About Content Text */
 .about-content p {
     font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    color: var(--text-color);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        margin-bottom: 2rem;
+        width: 40rem;
+        height: 40rem; /* Keeps the square shape smaller on mobile */
+    }
+
+    .about-details {
+        flex-basis: 100%;
+    }
+
+    .about-content p {
+        font-size: 1.4rem;
+    }
 }
 
 .btn-box.btns {
@@ -401,12 +486,11 @@ span {
     margin-left: 2rem; /* Indents lists for clarity */
 }
 
-
-
+/* Tech Stack Section */
 .tech-stack {
     background: var(--second-bg-color);
     padding: 5rem 9%; /* Adjust padding as needed */
-    text-align: left;
+    text-align: center; /* Center the text for a modern look */
     color: var(--text-color);
 }
 
@@ -417,39 +501,95 @@ span {
     margin-bottom: 3rem;
 }
 
+/* Cards Layout: Stack Cards Vertically */
 .tech-categories {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 2rem; /* Spacing between cards */
 }
 
+/* Horizontal Content Within Each Card */
 .tech-category {
+    display: flex;
+    justify-content: space-between; /* Spread content horizontally */
+    align-items: center;
     background: var(--bg-color);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
 }
 
+/* Hover Effect on Cards */
+.tech-category:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title and List Horizontal Layout */
 .tech-category h3 {
+    flex-basis: 30%; /* Takes 30% width for the title */
     font-size: 2rem;
     color: var(--main-color);
     margin-bottom: 1.5rem;
 }
 
+/* Technology List Positioned Horizontally Inside Each Card */
 .tech-category ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     list-style: none;
     padding: 0;
+    flex-basis: 70%; /* Takes 70% width for the tech list */
 }
 
+/* Styling for Tech List Items */
 .tech-category ul li {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.5;
-    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
 }
 
+/* Icon Styling */
+.tech-category ul li i {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects on List Items */
+.tech-category ul li:hover i {
+    transform: scale(1.2); /* Slight zoom on the icon */
+    color: var(--text-color);
+}
+
+.tech-category ul li:hover {
+    color: var(--main-color);
+}
+
+/* Responsive Design for Small Screens */
 @media (max-width: 768px) {
-    .tech-categories {
-        grid-template-columns: 1fr;
+    .tech-category {
+        flex-direction: column; /* Stack content vertically inside cards on small screens */
+        text-align: center;
+        align-items: center;
+    }
+
+    .tech-category h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .tech-category ul {
+        justify-content: center; /* Center tech items on smaller screens */
     }
 }
 
@@ -983,7 +1123,7 @@ span {
     width: 40px;  /* Size of the icons */
     height: 40px;  /* Size of the icons */
     border-radius: 50%;  /* Makes the icons round */
-    background-color: #00abf0;  /* Blue background for the icons */
+    background-color: #52b1d8;  /* Blue background for the icons */
     color: var(--bg-color);  /* Text color inside the icons */
     font-size: 20px;  /* Icon font size */
     border: none;  /* No border for the icons */
@@ -1143,7 +1283,7 @@ h1, h2 {
 /* Tech Stack Section */
 .tech-stack {
     padding: 6rem 9%;
-    background: linear-gradient(135deg, #00abf0, #1a73e8); /* Smooth gradient background */
+    background: linear-gradient(135deg, #52b1d8, #1a73e8); /* Smooth gradient background */
     text-align: center;
     color: var(--text-color);
     border-radius: 20px;
@@ -1201,7 +1341,7 @@ h1, h2 {
 .tech-category:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: #00abf0; /* Border changes to theme color on hover */
+    border-color: #52b1d8; /* Border changes to theme color on hover */
 }
 
 .tech-category h3 {
@@ -1230,7 +1370,7 @@ h1, h2 {
 
 .icon-container {
     font-size: 3.5rem;
-    color: #00abf0; /* Primary color for icons */
+    color: #52b1d8; /* Primary color for icons */
     margin-bottom: 1rem;
     transition: transform 0.6s ease-in-out, color 0.3s ease;
 }
@@ -1249,5 +1389,42 @@ h1, h2 {
 
     .tech-category {
         margin-bottom: 2rem;
+    }
+}
+
+.my-img { 
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image vertically */
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.my-img img {
+    width: 100%;
+    max-width: 50rem;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Makes the image square */
+    border-radius: 15px; /* Slight rounding for modern effect, adjust as needed */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
+    object-fit: cover; /* Ensures the image covers the square area */
+}
+
+.my-img img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for interaction */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .my-img {
+        width: 100%;
+    }
+
+    .my-img img {
+        max-width: 20rem; /* Adjust image size for smaller screens */
     }
 }
