@@ -218,13 +218,20 @@
         <div class="tech-categories">
             <!-- Programming Languages -->
             <div class="tech-category">
-                <h3>Programming Languages</h3>
+                <h3>Programming Languages & ETL Tools</h3>
                 <ul>
                     <li><i class="devicon-java-plain"></i> Java</li>
                     <li><i class="devicon-javascript-plain"></i> JavaScript</li>
                     <li><i class="devicon-python-plain"></i> Python</li>
                     <li><i class="devicon-r-original"></i> R</li>
                     <li><i class="devicon-react-original"></i> React</li>
+                    <li>PySpark</li>
+                    <li><i class="devicon-git-plain"></i> GIT</li>
+                    <li><i class="devicon-jenkins-plain"></i> Jenkins</li>
+                    <li><i class="devicon-airflow-plain"></i> Airflow</li>
+                    <li><i class="devicon-snowflake-plain"></i> Snowflake</li>
+                    <li>Databricks</li>
+                    <li>DBT</li>
                 </ul>
             </div>
             <!-- Databases and Data Management Systems -->
@@ -234,42 +241,54 @@
                     <li><i class="devicon-mongodb-plain"></i> MongoDB</li>
                     <li><i class="devicon-mysql-plain"></i> MySQL</li>
                     <li><i class="devicon-postgresql-plain"></i> PostgreSQL</li>
-                    <li>SQL</li>
-                    <li><i class="devicon-snowflake-plain"></i> Snowflake</li>
-                    <li>SSIS / SSMS / SSRS </li>
-                    <li>dbt</li>
+                    <li><i class="devicon-oracle-plain"></i> Oracle DB</li>
+                    <li><i class="devicon-redis-plain"></i> Redis</li>
+                    <li><i class="devicon-amazonwebservices-plain"></i> DynamoDB</li>
+                    <li>SSIS / SSMS</li>
                 </ul>
             </div>
             <!-- Tools and Technologies -->
             <div class="tech-category">
                 <h3>Tools and Technologies</h3>
                 <ul>
-                    <li><i class="devicon-airflow-plain"></i> Airflow</li>
                     <li><i class="devicon-amazonwebservices-plain"></i> AWS</li>
                     <li><i class="devicon-azure-plain"></i> Azure</li>
                     <li><i class="devicon-django-plain"></i> Django</li>
                     <li><i class="devicon-docker-plain"></i> Docker</li>
                     <li>ELK</li>
                     <li><i class="devicon-flask-original"></i> Flask</li>
-                    <li><i class="devicon-git-plain"></i> GIT</li>
-                    <li><i class="devicon-jenkins-plain"></i> Jenkins</li>
                     <li><i class="devicon-jira-plain"></i> JIRA</li>
                     <li><i class="devicon-apachekafka-plain"></i> Kafka</li>
                     <li><i class="devicon-postman-plain"></i> Postman</li>
-                    <li><i class="devicon-powerbi-plain"></i> Power BI</li>
-                    <li><i class="devicon-alteryx-plain"></i> Alteryx</li>
+                    <li>Power BI</li>
                 </ul>
             </div>
+            <div class="tech-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li><i class="devicon-java-plain"></i> Java</li>
+                    <li><i class="devicon-javascript-plain"></i> JavaScript</li>
+                    <li><i class="devicon-python-plain"></i> Python</li>
+                    <li><i class="devicon-r-original"></i> R</li>
+                    <li><i class="devicon-react-original"></i> React</li>
+                </ul>
+            </div>
+            
         </div>
     </section>
     
-                
+<!-- Include Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 <section class="portfolio" id="portfolio">
     <h1 class="heading top">Latest <span>Projects</span></h1>
     <h2 class="heading top"><span>Finance, Banking, and Insurance</span></h2>
-    <div class="portfolio-container">
-        <div class="slider">
-            <div class="slides">
+    
+    <!-- Swiper Container -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
                 <div class="portfolio-box">
                     <img src="./assets/health1.jpg" alt="Health Insurance Market Analysis and Cross-Sell Prediction">
                     <div class="portfolio-layer">
@@ -280,6 +299,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
                 <div class="portfolio-box">
                     <img src="./assets/credit.jpg" alt="Detection of Credit Card Transactions Fraud">
                     <div class="portfolio-layer">
@@ -290,36 +313,25 @@
                         </div>
                     </div>
                 </div>
-                <!--
-                <div class="portfolio-box">
-                    <img src="./assets/expense.png" alt="Health Insurance Market Analysis and Cross-Sell Prediction">
-                    <div class="portfolio-layer">
-                        <h4>Expenditure Graph</h4>
-                        <p>Utilized graph analysis to efficient the payment beteen friends.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/harshitgupta1998/expenditure-graph-mini" target="_blank"><i class='bx bxl-github'></i></a>
-                        </div>
-                    </div>
-                </div>
-                -->
-                <!-- Add additional project boxes as needed -->
             </div>
+
+            <!-- Add more slides as needed -->
         </div>
-        <div class="slider-controls">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
+
+        <!-- Slider Pagination (Dots) -->
+        <div class="swiper-pagination"></div>
     </div>
 </section>
-        <!-- Add any additional projects similarly -->
-    </div>
-</section> 
+
 
 <section class="portfolio" id="portfolio">
     <h2 class="heading top"><span>Medical</span></h2>
-    <div class="portfolio-container">
-        <div class="slider">
-            <div class="slides">
+    
+    <!-- Swiper Container -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
                 <div class="portfolio-box">
                     <img src="./assets/doodle.png" alt="Doodle Recognition Using Ensemble Technique">
                     <div class="portfolio-layer">
@@ -330,47 +342,70 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
                 <div class="portfolio-box">
-                    <img src="./assets/comic.png" alt="https://github.com/harshitgupta1998/Comic-Analysis-Using-NLP-Techniques">
+                    <img src="./assets/comic.png" alt="Comic Analysis and Script Generation">
                     <div class="portfolio-layer">
-                        <h4>Comic analysis and script generation</h4>
-                        <p>Firstly, web scraped the comic routine of various comic artists and analysed various methods of their delivery and analysis it statistical. And, also I did sentiment analysis and text generation to make my own stand-up speech.
-                            </p>
+                        <h4>Comic Analysis and Script Generation</h4>
+                        <p>Web scraped routines of various comic artists and performed statistical analysis on delivery styles. Additionally, conducted sentiment analysis and text generation to create a custom stand-up routine.</p>
                         <div class="project-links">
                             <a href="https://github.com/harshitgupta1998/Comic-Analysis-Using-NLP-Techniques" target="_blank"><i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
                 <div class="portfolio-box">
-                    <img src="./assets/face-recog.png" alt="https://github.com/harshitgupta1998/Face-detection-and-recognition-Using-Adaboost">
+                    <img src="./assets/face-recog.png" alt="Face Detection and Recognition">
                     <div class="portfolio-layer">
-                        <h4>Face detection and recognition</h4>
-                        <p>The process mainly comprises face detection and expression recognition using Haar classifier and using ada boost algorithm.
-                            </p>
+                        <h4>Face Detection and Recognition</h4>
+                        <p>Implemented face detection and expression recognition using Haar classifiers, and optimized recognition performance with the AdaBoost algorithm.</p>
                         <div class="project-links">
                             <a href="https://github.com/harshitgupta1998/Face-detection-and-recognition-Using-Adaboost" target="_blank"><i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
-
-        
-                <!-- Add additional project boxes as needed -->
             </div>
+
+            <!-- Add additional slides as needed -->
         </div>
-        <div class="slider-controls">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
+
+        <!-- Slider Pagination (Dots) -->
+        <div class="swiper-pagination"></div>
     </div>
 </section>
+
         <!-- Add any additional projects similarly -->
     </div>
 </section> 
+<!-- Include Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+<!-- Initialize Swiper -->
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        spaceBetween: 20,
+        centeredSlides: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
 
 
 <!-- Footer Design -->
-<footer class="footer" style="display: flex; justify-content: space-between; align-items: center; padding: 2rem; background-color: #0b222b; color: #ffffff; flex-wrap: wrap;">
+<footer class="footer" style="display: flex; justify-content: space-between; align-items: center; padding: 10rem; background-color: #0b222b; color: #ffffff; flex-wrap: wrap;">
     
     <!-- Resume and Social Links -->
     <div class="btn-box" style="display: flex; align-items: center; gap: 1.5rem;">
